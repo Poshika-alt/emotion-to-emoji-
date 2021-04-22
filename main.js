@@ -24,8 +24,8 @@ function modelLoaded(){
 
 function speak(){
     var synth=window.speechSynthesis;
-    speak_data_1="The first prediction is"+prediction_1;
-    speak_data_2="The first prediction is"+prediction_2;
+    speak_data_1="The first prediction is " +prediction_1;
+    speak_data_2="The second prediction is " +prediction_2;
     var utterThis=new SpeechSynthesisUtterance(speak_data_1+speak_data_2);
     synth.speak(utterThis);
 }
@@ -46,7 +46,6 @@ else{
     prediction_1=results[0].label;
     prediction_2=results[1].label;
     speak();
-}
 if(results[0].label=="happy"){
     document.getElementById("update_emoji").innerHTML="&#128522;";
 }
@@ -56,9 +55,9 @@ if(results[0].label=="sad"){
 if(results[0].label=="angry"){
     document.getElementById("update_emoji").innerHTML="&#128548;";
 }
-}
+
 if(results[0].label=="neutral"){
-    document.getElementById("update_emoji").innerHTML="&#128548;";
+    document.getElementById("update_emoji").innerHTML="&#128528;";
 }
 if(results[1].label=="happy"){
     document.getElementById("update_emoji").innerHTML="&#128522;";
@@ -70,5 +69,7 @@ if(results[1].label=="angry"){
     document.getElementById("update_emoji").innerHTML="&#128548;";
 }
 if(results[1].label=="neutral"){
-    document.getElementById("update_emoji").innerHTML="&#128548;";
+    document.getElementById("update_emoji").innerHTML="&#128528;";
+}
+}
 }
